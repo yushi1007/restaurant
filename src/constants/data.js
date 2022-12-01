@@ -79,4 +79,27 @@ const awards = [
   },
 ];
 
+export const navigation = [
+  {
+    name: "Home",
+    href: "home",
+  },
+  {
+    name: "About",
+    href: "about",
+  },
+  {
+    name: "Menu",
+    href: "menu",
+  },
+  {
+    name: "Awards",
+    href: "awards",
+  },
+  {
+    name: "Contact",
+    href: "contact",
+  },
+];
+
 export default { wines, cocktails, awards };
