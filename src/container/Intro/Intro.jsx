@@ -1,22 +1,21 @@
-import React, { useRef } from 'react';
-import { BsFillPlayFill, BsPauseFill } from 'react-icons/bs';
+import React, { useRef } from "react";
+import { BsFillPlayFill, BsPauseFill } from "react-icons/bs";
 
-import { meal } from '../../constants';
-import './Intro.css';
+import { meal } from "../../constants";
+import "./Intro.css";
 
 const Intro = () => {
   const [playVideo, setPlayVideo] = React.useState(false);
   const vidRef = useRef();
 
   const handleVideo = () => {
-      setPlayVideo((playVideo) => !playVideo)
-
-      if(playVideo) {
-        vidRef.current.pause();
-      } else {
-        vidRef.current.play();
-      }
-  }
+    setPlayVideo((playVideo) => !playVideo);
+    if (playVideo) {
+      vidRef.current.pause();
+    } else {
+      vidRef.current.play();
+    }
+  };
 
   return (
     <div className="app__video">
