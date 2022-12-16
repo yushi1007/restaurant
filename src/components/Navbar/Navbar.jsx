@@ -4,6 +4,7 @@ import { MdOutlineRestaurantMenu } from "react-icons/md";
 import "./Navbar.css";
 import images from "../../constants/images";
 import { navigation } from "../../constants/data";
+import { Link } from "react-scroll";
 
 const Navbar = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
@@ -17,7 +18,16 @@ const Navbar = () => {
         {navigation.map((item, index) => {
           return (
             <li key={index} className="p__opensans">
-              <a href={item.href}>{item.name}</a>
+              <Link
+                to={item.href}
+                activeClass="active"
+                spy={true}
+                smooth={true}
+                duration={700}
+                offset={50}
+              >
+                {item.name}
+              </Link>
             </li>
           );
         })}
@@ -33,6 +43,7 @@ const Navbar = () => {
       </div>
       <div className="app__navbar-smallscreen">
         <GiHamburgerMenu
+          className="hamburger-menu"
           color="#fff"
           fontSize={27}
           onClick={() => setToggleMenu(true)}
@@ -48,7 +59,17 @@ const Navbar = () => {
               {navigation.map((item, index) => {
                 return (
                   <li key={index} className="p__opensans">
-                    <a href={item.href}>{item.name}</a>
+                    <Link
+                      to={item.href}
+                      activeClass="active"
+                      spy={true}
+                      smooth={true}
+                      duration={700}
+                      offset={50}
+                      onClick={() => setToggleMenu(false)}
+                    >
+                      {item.name}
+                    </Link>
                   </li>
                 );
               })}
